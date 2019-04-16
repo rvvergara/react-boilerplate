@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -18,13 +19,20 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
-          plugins: ['transform-class-properties'],
         },
       },
     ],
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
+    host: 'localhost',
+    port: '3000',
+    hot: true,
   },
   devtool: 'cheap-module-eval-source-map',
+  plugins: [new HtmlWebpackPlugin({
+    title: "Boilerplate <change this name>",
+    filename: 'index.html',
+    template: path.join(__dirname, '/dist/index.html')
+  })],
 };

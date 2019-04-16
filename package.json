@@ -1,14 +1,16 @@
 {
-  "name": "expensify",
+  "name": "boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
