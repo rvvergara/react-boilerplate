@@ -74,7 +74,11 @@ babel-cli
 babel-loader
 ```
 
-`@babel/plugin-transform-runtime` -
+- Development equivalent of @babel/runtime:
+
+```
+@babel/plugin-transform-runtime
+```
 
 - To enable use of arrow functions and class properties in React class based components:
 
