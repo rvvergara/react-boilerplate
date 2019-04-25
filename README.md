@@ -4,6 +4,7 @@
 
 ## Contents
 
+- [Motivation](#motivation)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Dev Dependencies](#dev-dependencies)
@@ -12,6 +13,14 @@
 - [Running Automated Tests](#running-automated-tests)
 - [Maintainer](#maintainer)
 - [License](#license)
+
+### Motivation
+
+Building React apps is one of the most important skills web developers must have. Seeing your working app run and enjoyed by your friends can be a satisfying experience. Working on the apps itself should also be very satisfying.
+
+Building from scratch is still best done by using `create-react-app` for most novices and intermediate React developers. You can be sure that all the necessary packages and configurations will work. All you need is run that command.
+
+However, converting an existing vanilla JS or jQuery app may be cumbersome if you need to copy all your logic code into an entirely new react app. This is the main motivation for this boilerplate. By no means it's the best boilerplate for building new react apps or migrating existing apps into react but it sure serves its purpose well.
 
 ### Installation:
 
