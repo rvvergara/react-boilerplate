@@ -114,3 +114,28 @@ webpack
 webpack-cli
 webpack-dev-server
 ```
+
+### Directory Structure
+
+```
+root/
+  config/  **holds webpack config files   (webpack.common.js, webpack.dev.js, webpack.prod.js)**
+  src/
+    js/
+     components/
+    css/
+     base/
+      _base.scss  **contains general styles**
+      _settings.scss  **contains all style variables**
+     components/  **styles for each React Component**
+     main.scss  **imports all separate scss files**
+    test/
+     components/
+     fixtures/
+    (root level files):
+  .babelrc  ** necessary only to ensure Jest accepts ES6 import statements **
+  .eslintrc ** ESLint configurations and rules **
+  .gitignore
+  README.md
+  package.json
+```
