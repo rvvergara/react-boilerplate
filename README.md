@@ -1,5 +1,18 @@
 # React Boilerplate
 
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
+## Contents
+
+- [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Dev Dependencies](#dev-dependencies)
+- [package.json scripts](#package.json-scripts)
+- [Usage](#usage)
+- [Running Automated Tests](#running-automated-tests)
+- [Maintainer](#maintainer)
+- [License](#license)
+
 ### Installation:
 
 Clone the repository:
@@ -128,6 +141,8 @@ webpack-dev-server
 },
 ```
 
+### Usage
+
 **After installation modify the following to customize based on project:**
 
 ```
@@ -152,7 +167,7 @@ or
 npm start
 ```
 
-For automated tests:
+### Running Automated Tests
 
 Run for testing currently opened js files:
 
@@ -204,3 +219,13 @@ root/
   README.md
   package.json
 ```
+
+### Maintainer
+
+[Ryan Vergara](https://github.com/rvvergara)
+
+PRs accepted
+
+### License
+
+MIT ©2019 RyanV
