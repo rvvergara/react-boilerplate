@@ -1,6 +1,32 @@
 # React Boilerplate
 
-## Dependencies:
+### Installation:
+
+Clone the repository:
+
+```
+git clone git@github.com:rvvergara/react-boilerplate.git
+```
+
+then:
+
+```
+cd react-boilerplate
+```
+
+Then run to install (To ensure the packages are updated first run `yarn update` or `npm update` first)
+
+```
+yarn
+```
+
+or
+
+```
+npm -i
+```
+
+### Dependencies:
 
 `@babel/runtime` - Added in order to _remove regeneratorRunTime is not defined_ error when using asynchronous code
 
@@ -12,7 +38,7 @@
 
 `react` and `react-dom` - Main react packages for the web
 
-## Dev Dependencies:
+### Dev Dependencies:
 
 - Main babel related packages for transpiling into pre ES2015 JavaScript:
 
