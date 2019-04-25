@@ -26,7 +26,9 @@ or
 npm -i
 ```
 
-### Dependencies:
+### Dependencies :
+
+(see Comments in `/config/webpack.common.js`, `.babelrc`)
 
 `@babel/runtime` - Added in order to _remove regeneratorRunTime is not defined_ error when using asynchronous code
 
@@ -115,6 +117,69 @@ webpack-cli
 webpack-dev-server
 ```
 
+### package.json scripts:
+
+```
+"scripts": {
+    "build": "webpack --config config/webpack.prod.js",
+    "start": "webpack-dev-server --config config/webpack.dev.js",
+    "dev": "webpack --config config/webpack.dev.js",
+    "test": "jest"
+},
+```
+
+**After installation modify the following to customize based on project:**
+
+```
+src/index.html ** change page title **
+
+src/js/index.js ** remove uncessary template jsx component or keep it for testing app during first time running the dev-server
+
+src/css/base/_base.html ** change any base settings to conform to your project needs
+
+src/css/base/_base.html ** change any or all variables or remove altogether to write entirely your own
+```
+
+After modifying run to start dev-server:
+
+```
+yarn start
+```
+
+or
+
+```
+npm start
+```
+
+For automated tests:
+
+Run for testing currently opened js files:
+
+```
+yarn test --watch
+```
+
+or
+
+```
+npm test --watch
+```
+
+Use
+
+```
+yarn test --watchAll
+```
+
+or
+
+```
+npm test --watchAll
+```
+
+to run automated tests on all JS files
+
 ### Directory Structure
 
 ```
@@ -122,7 +187,7 @@ root/
   config/  **holds webpack config files   (webpack.common.js, webpack.dev.js, webpack.prod.js)**
   src/
     js/
-     components/
+     components/ ** React Components **
     css/
      base/
       _base.scss  **contains general styles**
@@ -132,7 +197,7 @@ root/
     test/
      components/
      fixtures/
-    (root level files):
+  (root level files):
   .babelrc  ** necessary only to ensure Jest accepts ES6 import statements **
   .eslintrc ** ESLint configurations and rules **
   .gitignore

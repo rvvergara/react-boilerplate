@@ -8,9 +8,11 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: 'js/[name].bundle.js',
+    // Need to set publicPath in order for index.html to refer to /main.bundle.js instead of main.bundle.js
     publicPath: '/',
   },
   optimization: {
+    // Configurations for js and css minifiers
     minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
