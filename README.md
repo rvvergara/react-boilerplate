@@ -10,6 +10,8 @@
 - [Dev Dependencies](#dev-dependencies)
 - [package.json scripts](#package.json-scripts)
 - [Usage](#usage)
+  - [New Projects](#new-projects)
+  - [Existing Projects](#existing-projects)
 - [Running Automated Tests](#running-automated-tests)
 - [Maintainer](#maintainer)
 - [License](#license)
@@ -156,9 +158,13 @@ webpack-dev-server
 
 ### Usage
 
+### New projects
+
 **After installation modify the following to customize based on project:**
 
 ```
+change directory name from react-boilerplate to your project name
+
 src/index.html ** change page title **
 
 src/js/index.js ** remove uncessary template jsx component or keep it for testing app during first time running the dev-server
@@ -167,6 +173,68 @@ src/css/base/_base.html ** change any base settings to conform to your project n
 
 src/css/base/_base.html ** change any or all variables or remove altogether to write entirely your own
 ```
+
+### Existing Projects:
+
+1. Copy and paste to your package.json's devDepedencies (dependencies directly affecting your work with React):
+
+```
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "sass-loader": "^7.1.0",
+```
+
+2. Copy and paste the following into your package.json's dependencies:
+
+```
+    "@babel/runtime": "^7.4.3",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+```
+
+3. If your project already has a webpack.config.js, make sure you have the following lines:
+
+```
+** inside the module rules: **
+
+{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ['transform-class-properties', '@babel/plugin-transform-runtime'],
+        },
+      },
+```
+
+4. If your project uses React Router you may wanna add the following line into the devServer part of webpack config file to ensure that for all routes the server will just render index.html and allow the react router to be the one to change the view (client side rendering):
+
+```
+  historyApiFallback: true,
+```
+
+5. If you already have jest installed in your project just make sure to create a jest.config.json in the project root and copy the contents in this boilerplate's own jest.config.json
+
+6. To ensure usage of ES2015 import statements in Jest, ensure you have a .babelrc file in the project root (copy the contents in this boilerplate's own .babelrc)
+
+7. If you are unsure which packages and configurations to copy in your project just copy all those that aren't currently not in your package.json, making sure all the scripts are also the same. And copy all webpack related configs in the right directories specified in this boilerplate.
 
 After modifying run to start dev-server:
 
