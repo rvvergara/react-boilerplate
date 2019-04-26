@@ -150,7 +150,7 @@ webpack-dev-server
     "build": "webpack --config config/webpack.prod.js",
     "start": "webpack-dev-server --config config/webpack.dev.js",
     "dev": "webpack --config config/webpack.dev.js",
-    "test": "jest"
+    "test": "jest --config jest.config.json"
 },
 ```
 
