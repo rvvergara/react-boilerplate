@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from '../js/components/App';
 import 'normalize.css/normalize.css';
 import '../scss/style.scss';
 
-const template = (
-  <div>
-    <h1>React Boilerplate</h1>
-  </div>
-);
-
-ReactDOM.render(template, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));
