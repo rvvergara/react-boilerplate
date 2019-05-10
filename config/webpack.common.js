@@ -4,6 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
+if (process.env.NODE_ENV === 'test') {
+  require('dotenv').config({ path: '.env.test' });
+} else if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({ path: '.env.development' });
+}
+
 module.exports = {
   entry: './src/js/index.js',
   output: {
@@ -41,7 +47,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpg|gif|jpeg|ico)$/,
         use: [
           {
             loader: 'file-loader',
@@ -66,7 +72,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/index.html'),
+      template: path.resolve(__dirname, '../src/public/index.html'),
+      favicon: path.resolve(__dirname, '../src/public/images/favicon.ico'),
     }),
     new MiniCssExtractPlugin({
       filename: './css/[name].css',
