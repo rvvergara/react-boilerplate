@@ -149,10 +149,10 @@ webpack-dev-server
 
 ```
 "scripts": {
-    "build": "webpack --config config/webpack.prod.js",
-    "start": "webpack-dev-server --config config/webpack.dev.js",
-    "dev": "webpack --config config/webpack.dev.js",
-    "test": "jest --config jest.config.json"
+    "build": "cross-env NODE_ENV=production webpack -p --config config/webpack.prod.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js",
+    "test": "cross-env NODE_ENV=test jest --config jest.config.json"
 },
 ```
 
@@ -186,6 +186,9 @@ src/css/base/_base.html ** change any or all variables or remove altogether to w
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "dotenv": "^8.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
@@ -195,6 +198,11 @@ src/css/base/_base.html ** change any or all variables or remove altogether to w
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.7.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
 ```
 
@@ -206,6 +214,7 @@ src/css/base/_base.html ** change any or all variables or remove altogether to w
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "webpack-merge": "^4.2.1"
 ```
 
 3. If your project already has a webpack.config.js, make sure you have the following lines:
@@ -290,6 +299,10 @@ root/
       _settings.scss  **contains all style variables**
      components/  **styles for each React Component**
      main.scss  **imports all separate scss files**
+    public/
+      index.html
+      images/
+        favicon.ico
     test/
      components/
      fixtures/
@@ -297,6 +310,7 @@ root/
   .babelrc  ** necessary only to ensure Jest accepts ES6 import statements **
   .eslintrc ** ESLint configurations and rules **
   .gitignore
+  jest.config.js **contains all necessary configs for jest**
   README.md
   package.json
 ```
